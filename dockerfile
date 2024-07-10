@@ -6,8 +6,9 @@ WORKDIR /source
 
 # Copy the .csproj and .sln files to restore dependencies
 COPY global.json ./
-COPY *.sln ./
-COPY src/ApplicationCore/ApplicationCore.csproj .
+COPY Everything.sln ./
+COPY src/ApplicationCore/ApplicationCore.csproj ./
+COPY src/BlazorAdmin/BlazorAdmin.csproj ./
 
 # Restore the dependencies
 RUN dotnet restore
