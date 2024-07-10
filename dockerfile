@@ -5,7 +5,9 @@ FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
 WORKDIR /source
 
 # Copy the .csproj and .sln files to restore dependencies
-COPY . .
+COPY global.json ./
+COPY *.sln ./
+COPY **/*.csproj ./
 
 # Restore the dependencies
 RUN dotnet restore
