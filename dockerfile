@@ -5,14 +5,10 @@ FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
 WORKDIR /source
 
 # Copy the .csproj and .sln files to restore dependencies
-COPY *.csproj ./
-COPY *.sln ./
+COPY . .
 
 # Restore the dependencies
 RUN dotnet restore
-
-# Copy the rest of the application code
-COPY . .
 
 # Run the test cases
 RUN dotnet test
