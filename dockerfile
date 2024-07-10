@@ -7,7 +7,7 @@ WORKDIR /source
 # Copy the .csproj and .sln files to restore dependencies
 COPY global.json ./
 COPY *.sln ./
-COPY /*.csproj ./
+COPY src/ApplicationCore/ApplicationCore.csproj .
 
 # Restore the dependencies
 RUN dotnet restore
