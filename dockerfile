@@ -5,19 +5,14 @@ FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
 WORKDIR /source
 
 # Copy the .csproj and .sln files to restore dependencies
-COPY global.json ./
-COPY Everything.sln ./
-COPY src/ApplicationCore/ApplicationCore.csproj ./
-COPY src/BlazorAdmin/BlazorAdmin.csproj ./
+COPY . .
 
 # Restore the dependencies
-RUN dotnet restore Everything.sln
+RUN dotnet restore 
 
 
 # Run the test cases
-RUN dotnet test Everything.sln
-RUN dotnet test src/ApplicationCore/ApplicationCore.csproj
-RUN dotnet test src/BlazorAdmin/BlazorAdmin.csproj
+RUN dotnet test
 
 # Build the application using dotnet publish
 RUN dotnet publish -c Release -o /app/published
