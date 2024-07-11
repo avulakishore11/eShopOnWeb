@@ -12,8 +12,7 @@ COPY src/BlazorAdmin/BlazorAdmin.csproj ./
 
 # Restore the dependencies
 RUN dotnet restore Everything.sln
-RUN dotnet restore src/ApplicationCore/ApplicationCore.csproj
-RUN dotnet restore src/BlazorAdmin/BlazorAdmin.csproj
+
 
 # Run the test cases
 RUN dotnet test Everything.sln
