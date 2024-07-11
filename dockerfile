@@ -5,7 +5,7 @@ FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
 WORKDIR /source
 
 # Copy the .csproj and .sln files to restore dependencies
-COPY source/src/BlazorAdmin/BlazorAdmin.csproj .
+COPY src/BlazorAdmin/BlazorAdmin.csproj .
 COPY src/ApplicationCore/ApplicationCore.csproj .
 
 # Restore the dependencies
