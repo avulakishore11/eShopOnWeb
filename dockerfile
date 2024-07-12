@@ -4,7 +4,7 @@ WORKDIR /app
 
 
 # Copy the solution file
-COPY *.sln sln/
+COPY *.sln app/
 
 
 # Restore dependencies
