@@ -2,7 +2,7 @@ FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
 WORKDIR /src
 
 # Copy the solution file
-COPY *.sln /app/src
+COPY *.sln /app/src/
 
 # Copy all the project files to their respective directories
 COPY src/**/*.csproj src/
