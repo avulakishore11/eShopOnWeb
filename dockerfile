@@ -5,16 +5,16 @@ WORKDIR /app
 COPY src/PublicApi/PublicApi.csproj .
 
 # Specify the solution file to restore dependencies
-RUN dotnet restore 
+RUN dotnet restore src/PublicApi/PublicApi.csproj
 
 # Copy the entire project
 COPY . .
 
 # Run tests
-RUN dotnet test Everything.sln
+RUN dotnet test src/PublicApi/PublicApi.csproj
 
 # Publish the application
-RUN dotnet publish  -c Release -o /app/publish
+RUN dotnet publish src/PublicApi/PublicApi.csproj -c Release -o /app/publish
 
 # Optional: Define the runtime image if needed
 # FROM mcr.microsoft.com/dotnet/aspnet:8.0 AS runtime
