@@ -2,11 +2,10 @@ FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
 WORKDIR /app
 
 # Copy the solution file
-COPY Everything.sln .
-COPY eShopOnWeb.sln .
+COPY src/PublicApi/PublicApi.csproj .
 
 # Specify the solution file to restore dependencies
-RUN dotnet restore eShopOnWeb.sln
+RUN dotnet restore 
 
 # Copy the entire project
 COPY . .
@@ -15,7 +14,7 @@ COPY . .
 RUN dotnet test Everything.sln
 
 # Publish the application
-RUN dotnet publish eShopOnWeb.sln -c Release -o /app/publish
+RUN dotnet publish  -c Release -o /app/publish
 
 # Optional: Define the runtime image if needed
 # FROM mcr.microsoft.com/dotnet/aspnet:8.0 AS runtime
