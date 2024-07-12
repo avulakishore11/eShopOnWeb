@@ -6,7 +6,7 @@ COPY src/PublicApi/PublicApi.csproj .
 COPY *.sln app/
 
 # Specify the solution file to restore dependencies
-RUN dotnet restore  
+RUN dotnet restore  *.sln
 
 # Copy the entire project
 COPY . .
