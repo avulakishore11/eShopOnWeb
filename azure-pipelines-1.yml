@@ -7,7 +7,7 @@ trigger:
 - main
 
 pool:
-  name: 'docker-pool'
+  name: 'Azure Pipelines'
 
 variables:
   solution: '**/*.sln'
