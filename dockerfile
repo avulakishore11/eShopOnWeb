@@ -1,19 +1,21 @@
-# STEP 1: Setup the base image for SDK to build the application
-FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
 
-# Setup working directory
-WORKDIR /source
 
-# Copy the .csproj and .sln files to restore dependencies
-COPY Everything.sln .
 
-# Restore the dependencies
+
+FROM mcr.microsoft.com/dotnet/sdk:8.0-bullseye-slim AS build
+WORKDIR /src
+COPY *.sln .
+COPY src/ApplicationCore/*.csproj .
+COPY src/ApplicationCore/Specifications/*.csproj .
+COPY src/BlazorAdmin/*csproj .
+COPY src/BlazorShared/*.csproj .
+COPY src/Web/*.csproj .
+COPY tests/IntegrationTests/*csproj .
+COPY tests/UnitTests/*csproj .
+COPY FunctionalTests/*.csproj .
 
 RUN dotnet restore 
-
-
-# Run the test cases
+COPY . .
 RUN dotnet test
+RUN dotnet publish  -c Release -o /app/publish
 
-# Build the application using dotnet publish
-RUN dotnet publish -c Release -o /app/published
