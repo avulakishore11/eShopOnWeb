@@ -4,7 +4,8 @@ WORKDIR /app
 
 
 # Copy the solution file
-COPY *.sln app/
+COPY Everything.sln .
+COPY eShopOnWeb.sln .
 
 
 # Restore dependencies
