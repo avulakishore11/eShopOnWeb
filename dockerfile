@@ -1,13 +1,20 @@
 FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
 WORKDIR /src
 
+
+
 # Copy the solution file
-COPY *.sln /app/src/
+COPY *.sln sln/
 
 # Copy all the project files to their respective directories
-COPY src/**/*.csproj src/
-COPY tests/**/*.csproj tests/
-
+COPY src/ApplicationCore/*.csproj src/ApplicationCore/
+COPY src/ApplicationCore/Specifications/*.csproj src/ApplicationCore/Specifications/
+COPY src/BlazorAdmin/*.csproj src/BlazorAdmin/
+COPY src/BlazorShared/*.csproj src/BlazorShared/
+COPY src/Web/*.csproj src/Web/
+COPY tests/IntegrationTests/*.csproj tests/IntegrationTests/
+COPY tests/UnitTests/*.csproj tests/UnitTests/
+COPY tests/FunctionalTests/*.csproj FunctionalTests/
 
 # Restore dependencies
 RUN dotnet restore
@@ -26,3 +33,10 @@ RUN dotnet publish -c Release -o /app/publish
 # WORKDIR /app
 # COPY --from=build /app/publish .
 # ENTRYPOINT ["dotnet", "YourProject.dll"]
+
+
+# Copy all the project files to their respective directories
+#COPY src/**/*.csproj src/
+#COPY tests/**/*.csproj tests/
+
+
