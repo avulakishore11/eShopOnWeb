@@ -6,7 +6,7 @@ COPY Everything.sln .
 COPY eShopOnWeb.sln .
 
 # Specify the solution file to restore dependencies
-RUN dotnet restore Everything.sln
+RUN dotnet restore eShopOnWeb.sln
 
 # Copy the entire project
 COPY . .
@@ -15,7 +15,7 @@ COPY . .
 RUN dotnet test Everything.sln
 
 # Publish the application
-RUN dotnet publish Everything.sln -c Release -o /app/publish
+RUN dotnet publish eShopOnWeb.sln -c Release -o /app/publish
 
 # Optional: Define the runtime image if needed
 # FROM mcr.microsoft.com/dotnet/aspnet:8.0 AS runtime
