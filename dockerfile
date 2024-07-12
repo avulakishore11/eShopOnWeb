@@ -4,17 +4,8 @@ WORKDIR /app
 
 
 # Copy the solution file
-COPY *.sln app/
+COPY *.sln .
 
-# Copy all the project files to their respective directories
-COPY src/ApplicationCore/*.csproj src/ApplicationCore/
-
-COPY src/BlazorAdmin/*.csproj src/BlazorAdmin/
-COPY src/BlazorShared/*.csproj src/BlazorShared/
-COPY src/Web/*.csproj src/Web/
-COPY tests/IntegrationTests/*.csproj tests/IntegrationTests/
-COPY tests/UnitTests/*.csproj tests/UnitTests/
-COPY tests/FunctionalTests/*.csproj FunctionalTests/
 
 # Restore dependencies
 RUN dotnet restore
