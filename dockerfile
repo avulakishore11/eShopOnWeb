@@ -3,6 +3,7 @@ WORKDIR /app
 
 # Copy the solution file
 COPY src/PublicApi/PublicApi.csproj .
+COPY **/*.sln app/
 
 # Specify the solution file to restore dependencies
 RUN dotnet restore src/PublicApi/PublicApi.csproj
