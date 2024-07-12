@@ -4,7 +4,7 @@ WORKDIR /src
 
 
 # Copy the solution file
-COPY *.sln ./
+COPY *.sln src/
 
 # Copy all the project files to their respective directories
 COPY src/ApplicationCore/*.csproj src/ApplicationCore/
