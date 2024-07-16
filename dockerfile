@@ -3,7 +3,7 @@ FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
 WORKDIR /app
 
 # Set environment variables for the solution and project files
-ENV SOLUTION_FILE=Everything.sln
+ENV SOLUTION_FILE=eShopOnWeb.sln
 ENV WEB_PROJECT_PATH=src/Web
 ENV WEB_PROJECT_FILE=Web.csproj
 
