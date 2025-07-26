@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "defaultProvider": "unpkg",
+  "defaultProvider": "jsdelivr",
   "libraries": [
     {
       "library": "jquery@3.6.0",
@@ -8,14 +8,6 @@
     },
     {
       "library": "bootstrap@3.4.1",
-      "files": [
-        "dist/css/bootstrap.css",
-        "dist/css/bootstrap.css.map",
-        "dist/css/bootstrap.min.css",
-        "dist/css/bootstrap.min.css.map",
-        "dist/js/bootstrap.js",
-        "dist/js/bootstrap.min.js"
-      ],
       "destination": "wwwroot/lib/bootstrap/"
     },
     {
@@ -24,10 +16,6 @@
     },
     {
       "library": "jquery-validation@1.19.5",
-      "files": [
-        "dist/jquery.validate.min.js",
-        "dist/jquery.validate.js"
-      ],
       "destination": "wwwroot/lib/jquery-validation/"
     },
     {
@@ -36,10 +24,6 @@
     },
     {
       "library": "@microsoft/signalr@7.0.5",
-      "files": [
-        "dist/browser/signalr.js",
-        "dist/browser/signalr.min.js"
-      ],
       "destination": "wwwroot/lib/signalr/"
     }
   ]
