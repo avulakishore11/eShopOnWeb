@@ -6,6 +6,8 @@ FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
 WORKDIR /src
 
 COPY src/Web/*.csproj Web/
+COPY src/BlazorAdmin/*.csproj BlazorAdmin/
+COPY src/BlazorShared/*.csproj BlazorShared/
 COPY src/ApplicationCore/*.csproj ApplicationCore/
 COPY src/Infrastructure/*.csproj Infrastructure/
 RUN dotnet restore Web/Web.csproj
